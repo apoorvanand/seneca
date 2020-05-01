@@ -74,7 +74,9 @@
     "coverage": "lab -v -P test -L -t 85 -r html > docs/coverage.html",
     "annotate": "docco seneca.js lib/*.js -o docs/annotated",
     "smoke": "node test/stubs/launch.js",
-    "prettier": "prettier --write --no-semi --single-quote *.js lib/*.js test/*.js"
+    "prettier": "prettier --write --no-semi --single-quote *.js lib/*.js test/*.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "archy": "1.0",
@@ -94,7 +96,8 @@
     "semver": "5.5",
     "seneca-transport": "2.3",
     "use-plugin": "1.0",
-    "wreck": "12.5"
+    "wreck": "12.5",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "async": "2",
@@ -107,5 +110,6 @@
     "prettier": "1",
     "seneca-entity": "github:senecajs/seneca-entity",
     "seneca-error-test": "0"
-  }
+  },
+  "snyk": true
 }
